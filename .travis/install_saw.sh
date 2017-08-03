@@ -26,3 +26,6 @@ mkdir -p $INSTALL_DIR && mv saw/* $INSTALL_DIR
 clang --version
 $INSTALL_DIR/bin/saw --version
 
+sudo apt install clang-3.8 -y
+sudo apt install llvm-3.8 -y
+
