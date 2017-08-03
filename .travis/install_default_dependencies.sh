@@ -48,6 +48,6 @@ if [[ "$TESTS" == "integration" ]]           && [[ ! -d "$GNUTLS_INSTALL_DIR" ]]
 
 # Install SAW, Z3, and Yices for formal verification
 if [[ "$SAW" == "true" ]]                    && [[ ! -d "$SAW_INSTALL_DIR" ]]; then
-    mkdir -p $SAW_INSTALL_DIR && .travis/install_saw.sh `mktemp -d` $SAW_INSTALL_DIR > /dev/null ; fi
+    mkdir -p $SAW_INSTALL_DIR && .travis/install_saw.sh `mktemp -d` $SAW_INSTALL_DIR ; fi
 if [[ "$SAW" == "true" ]]                    && [[ ! -d "$Z3_INSTALL_DIR" ]]; then
     mkdir -p $Z3_INSTALL_DIR && .travis/install_z3_yices.sh `mktemp -d` $Z3_INSTALL_DIR > /dev/null ; fi
