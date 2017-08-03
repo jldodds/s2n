@@ -15,6 +15,7 @@ addons:
       packages:
         - indent
         - kwstyle
+        - clang-3.8
 
 osx_image: xcode8
 
