@@ -66,7 +66,7 @@ endif
 CFLAGS_LLVM = ${DEFAULT_CFLAGS} -emit-llvm -c -g -O1
 
 $(BITCODE_DIR)%.bc: %.c
-	clang $(CFLAGS_LLVM) -o $@ $< 
+	clang-3.8 $(CFLAGS_LLVM) -o $@ $< 
 
 
 INDENTOPTS = -npro -kr -i4 -ts4 -nut -sob -l180 -ss -ncs -cp1
