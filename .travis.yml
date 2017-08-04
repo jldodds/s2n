@@ -7,7 +7,6 @@ cache:
         # This directory is unique for each entry of the build matrix per:
         # https://docs.travis-ci.com/user/caching/#Caches-and-build-matrices 
         - test-deps
-    apt : true
 
 addons:
     apt:
@@ -16,7 +15,6 @@ addons:
       packages:
         - indent
         - kwstyle
-        - clang-3.8
 
 osx_image: xcode8
 
@@ -69,10 +67,19 @@ matrix:
     env: TESTS=sawHMACFailure               SAW=true
   #This exception is because the test isn't finished yet, remove to turn on DRBG Saw tests
   - env: TESTS=sawDRBG                      SAW=true GCC6_REQUIRED=false
+  include:
+  - env : TESTS=sawHMAC SAW_HMAC_TEST=md5    SAW=true GCC6_REQUIRED=false
+  addons:
+    apt:
+      packages:
+        - clang-3.8
+        - llvm-3.8
   allow_failures:
     - os: osx
   fast_finish: true
 
+  
+  
 before_install:
   # Setup the cache directory paths
   - if [[ ! -d test-deps ]]; then mkdir test-deps ; fi
