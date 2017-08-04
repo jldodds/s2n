@@ -70,10 +70,10 @@ matrix:
   - os : linux
     env : TESTS=sawHMAC SAW_HMAC_TEST=md5    SAW=true GCC6_REQUIRED=false
     addons:
-    apt:
-      packages:
-        - clang-3.8
-        - llvm-3.8
+      apt:
+        packages:
+          - clang-3.8
+          - llvm-3.8
   allow_failures:
     - os: osx
   fast_finish: true
